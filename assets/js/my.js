@@ -1,0 +1,21 @@
+$(document).ready(function(){
+    $("#contact").validate({
+        rules:{
+            name:{
+                required:true,
+                minlength:3,
+                maxlength:10
+            },
+            email:{
+                required:true,
+                email:true
+            },
+            subject:{
+                required:true
+            },
+            message:{
+                required:true
+            }
+        }
+    })
+})
