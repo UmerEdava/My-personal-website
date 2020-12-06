@@ -20,6 +20,8 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     </head>
     
     <body>
@@ -430,7 +432,7 @@
                         <div class="section-heading dark-bg contact-heading">
                         <h2 class="text-center mb-5">Contact <em>Me</em></h2>
                     </div>
-                        <form id="contact" action="" method="post">
+                        <form id="contact" action="">
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
@@ -479,6 +481,26 @@
         </div>
     </footer>
 
+    <script>
+        $("#contact").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbw8uOoAAMVkHcPK2r-VmdiDikN308-6wUIfQEhA/exec",
+                data:$("#contact").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+      
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
